@@ -11,56 +11,6 @@ A web application that conducts AI-powered interviews to assess whether submitte
 - **Real-time Status Updates**: Tracks interview progress and provides real-time feedback
 - **Detailed Results**: Provides scoring, confidence levels, and reasoning for the assessment
 
-## Setup Instructions
-
-### 1. Prerequisites
-
-- Node.js (version 14 or higher)
-- A Ribbon API account and API key
-
-### 2. Get Ribbon API Key
-
-1. Sign up at [Ribbon AI](https://app.ribbon.ai/)
-2. Navigate to your API settings
-3. Generate an API key
-4. Copy the API key for use in step 4
-
-### 3. Install Dependencies
-
-```bash
-cd "/Users/ciqbian/Desktop/VS/HT6 25/Code Buddy 2"
-npm install
-```
-
-### 4. Configure Environment
-
-1. Open the `.env` file
-2. Replace `your_ribbon_api_key_here` with your actual Ribbon API key:
-
-```env
-RIBBON_API_KEY=your_actual_api_key_here
-PORT=3000
-```
-
-### 5. Start the Application
-
-For development (with auto-restart):
-```bash
-npm run dev
-```
-
-For production:
-```bash
-npm start
-```
-
-### 6. Access the Application
-
-Open your browser and navigate to:
-```
-http://localhost:3000
-```
-
 ## How It Works
 
 ### 1. Code Submission
@@ -90,52 +40,6 @@ http://localhost:3000
   - Assessment of whether code is likely human or AI-generated
   - Reasoning behind the score
   - Full interview transcript
-
-## API Endpoints
-
-### `POST /api/submit-code`
-Submit code for interview creation.
-
-**Request Body:**
-```json
-{
-  "code": "string",
-  "language": "string",
-  "studentName": "string",
-  "studentEmail": "string"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "sessionId": "string",
-  "interviewLink": "string",
-  "interviewId": "string"
-}
-```
-
-### `GET /api/interview-status/:interviewId`
-Check interview completion status and get results.
-
-**Response:**
-```json
-{
-  "status": "completed",
-  "analysis": {
-    "score": 75,
-    "confidence": "high",
-    "aiLikelihood": "likely human-written",
-    "reasoning": "Claims personal authorship (+15); Uses technical terminology (4 matches) (+10)"
-  },
-  "transcript": "string",
-  "studentInfo": {
-    "name": "string",
-    "language": "string"
-  }
-}
-```
 
 ## Scoring Algorithm
 
@@ -185,25 +89,6 @@ Update the `analyzeForAIDetection` function in `server.js` to adjust scoring fac
 
 ### Interview Questions
 Customize the base questions in the `generateCodeQuestions` function to focus on different aspects of code understanding.
-
-## Troubleshooting
-
-### Common Issues
-
-1. **"Missing required fields" error**: Ensure all form fields are filled out
-2. **"Failed to create interview" error**: Check your Ribbon API key is correct
-3. **Interview not starting**: Verify the Ribbon API key has proper permissions
-4. **Results not loading**: Check browser console for errors and verify API connectivity
-
-### API Rate Limits
-Be aware of Ribbon API rate limits. The application includes basic error handling, but you may need to implement additional retry logic for high-volume usage.
-
-## Security Considerations
-
-- Store API keys securely (never commit to version control)
-- Implement input validation and sanitization
-- Consider adding authentication for production use
-- Monitor API usage and costs
 
 ## License
 
