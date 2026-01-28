@@ -2,6 +2,8 @@
 
 A web application that conducts AI-powered interviews to assess whether submitted code was written by a human or AI. Uses the Ribbon API to create personalized code review interviews.
 
+[![Youtube Video: https://www.youtube.com/watch?v=buEkpqzZahM](https://img.youtube.com/vi/buEkpqzZahM/0.jpg)](https://www.youtube.com/watch?v=buEkpqzZahM)
+
 ## Features
 
 - **Code Submission**: Students can paste their code and provide basic information
