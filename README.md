@@ -1,4 +1,4 @@
-# Code Buddy - AI Detection Interview System
+# Codefessor - AI Detection Interview System
 
 A web application that conducts AI-powered interviews to assess whether submitted code was written by a human or AI. Uses the Ribbon API to create personalized code review interviews.
 
